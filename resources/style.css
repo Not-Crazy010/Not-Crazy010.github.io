@@ -1,0 +1,325 @@
+@font-face {
+  font-family: title;
+  src: url('/resources/SpaceMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: body;
+  src: url('/resources/SpaceMono-Regular.ttf');
+}
+
+html {
+  margin: 0 auto;
+  max-width: 1000px;
+  font-size: 1.2em;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  font-family: title, sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 75px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: body, serif;
+  font-size: 1.5em;
+}
+
+body,
+h3 {
+  font-family: body, serif;
+}
+
+body {
+  color: #FFFFFF;
+  padding: 65px 25px 25px 25px;
+  margin: 0;
+  line-height: 2em;
+  background-color: #A1BE95;
+  /*  background-image:url('/resources/paper.png'); */
+  /* 	background-attachment: fixed; */
+  overflow-x: hidden;
+}
+
+main img,
+main .webvid {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.webvid {
+  padding: 56.25% 0 0 0;
+  position: relative;
+  background-color: black;
+  margin: 20px 0;
+}
+
+.webvid * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+iframe {
+  border: none;
+}
+
+a {
+  color: #3e3c3c;
+}
+
+a:hover {
+  color: #F98866;
+}
+
+a img {
+  vertical-align: top;
+}
+
+#navmobile {
+  display: none;
+  width: 80px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  margin: 0;
+  padding: 5px 25px 10px 25px;
+  top: 0;
+  position: fixed;
+  color: #ffffff;
+  background-color: #F98866;
+  font-size: 25px;
+  font-family: title;
+  z-index: 99 !important;
+  border-radius: 0 0 50px 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#navframe {
+  position: fixed;
+  height: 100%;
+  width: 200px;
+  margin-left: -25px;
+  top: 0;
+  overflow: visible;
+}
+
+.viewerOptions {
+  background-color: #171412;
+  padding: 10px 20px 10px 30px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-family: title;
+  border-radius: 40px 0 0 0;
+}
+
+nav {
+  margin: auto;
+  padding: 0;
+  margin: 50px auto 50px auto;
+  position: relative;
+
+  text-align: center;
+
+  font-family: title, sans-serif;
+  font-size: 30px;
+
+  width: 150px;
+
+  color: #2a2622;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: #F98866;
+  border-radius: 100px 100px 10px 10px;
+}
+
+
+nav,
+#navmobile,
+.packedCircle {
+  box-shadow: 0px 10px 20px #00000050;
+}
+
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul {
+  margin: 0;
+  line-height: 1;
+  padding: 0 15px;
+  list-style-type: none;
+}
+
+nav li {
+  padding-bottom: 15pt;
+  line-height: 1em;
+}
+
+main {
+  margin-left: 175px;
+}
+
+.software-icon {
+  width: 1em;
+  height: 1em;
+  display: inline;
+  vertical-align: baseline;
+}
+
+.circlesPacked {
+  padding: 0;
+  margin: -75px -50px;
+  padding: 100px 50px;
+  overflow: auto;
+}
+
+.packedCircle {
+  overflow: hidden;
+  position: relative;
+
+  width: 38%;
+  padding-bottom: 38%;
+  height: 0;
+  float: left;
+
+  border-radius: 50%;
+  display: inline;
+  margin: 1%;
+  margin-top: -4%;
+
+  background-color: #00000050;
+}
+
+.packedCircle:hover {
+  box-shadow: 0px 0px 50px #F98866;
+}
+
+.packedCircle .thumbnail {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  border-radius: 50%;
+  line-height: 90%;
+}
+
+.packedCircle:hover .thumbnail {
+  filter: blur(5px) brightness(0.4);
+}
+
+.thumbtext {
+  display: none;
+
+  padding: auto;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 70%;
+  line-height: 1.2em;
+  font-family: title;
+}
+
+.packedCircle:hover .thumbtext {
+  display: block;
+}
+
+
+.circlesPacked a:nth-child(4n+3) {
+  margin-left: 20.5%;
+}
+
+.circlesPacked a:nth-child(4n+5) {
+  clear: left;
+}
+
+#backgroundGlyph {
+  position: fixed;
+  width: 1020px; /* Reduced size */
+  height: 986px; /* Reduced size */
+  bottom: -50px; /* Adjusted position to fit smaller size */
+  left: 10px; /* Slightly repositioned for balance */
+  opacity: 5%; /* Increased opacity for better visibility */
+  background-image: url('https://f302cfb1-b264-449d-9d31-c46b98426fca-00-37mi3ymmlmy7g.janeway.replit.dev/resources/chonk.png');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  z-index: -100;
+}
+
+@media screen and (max-width: 700px) {
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2,
+  h3 {
+    font-size: 25px;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  main p,
+  h1,
+  h2,
+  h3 {
+    padding: 0 10px 0 10px;
+  }
+
+  #navframe {
+    display: none;
+  }
+
+  #navmobile {
+    display: block;
+  }
+
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .circlesPacked {
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  #backgroundGlyph {
+    position: fixed;
+    width: 100%;
+
+    bottom: 0;
+    left: -15%;
+    opacity: 2%;
+
+    display: none;
+  }
+
+  .verticalvid {
+    padding: 100% 0 0 0;
+  }
+}
