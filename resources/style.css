@@ -262,7 +262,7 @@ main {
   bottom: -50px; /* Adjusted position to fit smaller size */
   left: 10px; /* Slightly repositioned for balance */
   opacity: 5%; /* Increased opacity for better visibility */
-  background-image: url('https://not-crazy010.github.io/resources/chonk.png');
+  background-image: url('/resources/chonk.png');
   background-position: left bottom;
   background-repeat: no-repeat;
   z-index: -100;
