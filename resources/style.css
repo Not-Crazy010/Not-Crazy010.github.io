@@ -228,13 +228,17 @@ main {
   width: 100%;
   height: 100%;
 
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   line-height: 90%;
   top: -10px;
 }
 
 .packedCircle:hover .thumbnail {
+  filter: blur(5px) brightness(0.4);
+}
+
+.packedCircle:hover .thumbnailPhoto {
   filter: blur(5px) brightness(0.4);
 }
 
