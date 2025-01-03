@@ -224,6 +224,16 @@ main {
   line-height: 90%;
 }
 
+.packedCircle .thumbnailPhoto {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  border-radius: 50%;
+  line-height: 90%;
+  top: -10px;
+}
+
 .packedCircle:hover .thumbnail {
   filter: blur(5px) brightness(0.4);
 }
