@@ -38,28 +38,27 @@
       </a>
       
       <script>
-        const imageFolder = "/resources\Photos\CoolProjects";
-        const imageExtensions = ["jpg", "jpeg", "png", "gif"];
-        const dynamicImage = document.getElementById("dynamicImagePhoto");
+        document.addEventListener("DOMContentLoaded", () => {
+          const imageFolder = "/resources/Photos/CoolProjects";
+          const images = [
+            `${imageFolder}/3DCrane.png`,
+            `${imageFolder}/3DExcavator.png`,
+            `${imageFolder}/3DFork.png`,
+            `${imageFolder}/3DSkid.png`,
+          ];
+          const dynamicImage = document.getElementById("dynamicImagePhoto");
+          let currentIndex = 0;
       
-        const images = [
-          `${imageFolder}/3DCrane.png`,
-          `${imageFolder}/3DExcavator.png`,
-          `${imageFolder}/3DFork.png`,
-          `${imageFolder}/3DSkid`,
-        ];
-
-        let currentIndex = 0;
+          function updateImage() {
+            dynamicImage.src = images[currentIndex];
+            currentIndex = (currentIndex + 1) % images.length;
+          }
       
-        function updateImage() {
-          dynamicImage.src = images[currentIndex];
-          currentIndex = (currentIndex + 1) % images.length;
-        }
-      
-        setInterval(updateImage, 2000);
-
-        updateImage();
+          setInterval(updateImage, 2000);
+          updateImage();
+        });
       </script>
+      
       
 
     </div>
