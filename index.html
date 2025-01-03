@@ -16,7 +16,6 @@
 
   <a href="/mobilenav.html" id="navmobile"> Menu </a>
   <iframe id="navframe" src="/resources/nav.html"></iframe>
-
   <main>
 
     <div class="circlesPacked">
@@ -28,6 +27,40 @@
           SoxBox
         </div>
       </a>
+
+      <a class="packedCircle" href="/Cool-Projects.html">
+        <div class="thumbnail">
+          <img id="dynamicImagePhoto" src="" alt="Cool Projects" />
+        </div>
+        <div class="thumbtext">
+          Cool Projects
+        </div>
+      </a>
+      
+      <script>
+        const imageFolder = "/resources\Photos\CoolProjects";
+        const imageExtensions = ["jpg", "jpeg", "png", "gif"];
+        const dynamicImage = document.getElementById("dynamicImagePhoto");
+      
+        const images = [
+          `${imageFolder}/3DCrane.png`,
+          `${imageFolder}/3DExcavator.png`,
+          `${imageFolder}/3DFork.png`,
+          `${imageFolder}/3DSkid`,
+        ];
+
+        let currentIndex = 0;
+      
+        function updateImage() {
+          dynamicImage.src = images[currentIndex];
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+      
+        setInterval(updateImage, 2000);
+
+        updateImage();
+      </script>
+      
 
     </div>
 
