@@ -19,23 +19,30 @@
   <main>
 
     <div class="circlesPacked">
-
+      
       <a class="packedCircle" href="/SoxBox.html">
         <video class="thumbnail" autoplay muted playsinline loop src="resources/SoxBox/soxboxPH.mp4"></video>
 
-        <div class="thumbtext">
-          SoxBox
-        </div>
+        <div class="thumbtext">SoxBox</div>
       </a>
 
       <a class="packedCircle" href="/Cool-Projects.html">
-        <div class="thumbnailPhoto">
-          <img id="dynamicImagePhoto" src="" alt="Cool Projects" />
+        <div class="thumbnailPhotoVideo">
+          <img id="dynamicImagePhotoForCOOLPROJECTS" src="" alt="Cool Projects" />
         </div>
-        <div class="thumbtext">
-          Cool Projects
-        </div>
+        <div class="thumbtext">Cool Projects</div>
       </a>
+
+      <a class="packedCircle" href="/notthatcrazyinteractive.html">
+        <img class="photo" src="resources\icons\BlackSoxBoxLogo.png"></img>
+
+        <div class="thumbtext">NotThatCrazy Interactive</div>
+      </a>
+      
+      
+      
+      
+      
       
       <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -46,7 +53,7 @@
             `${imageFolder}/3DFork.jpg`,
             `${imageFolder}/3DSkid.png`,
           ];
-          const dynamicImage = document.getElementById("dynamicImagePhoto");
+          const dynamicImage = document.getElementById("dynamicImagePhotoForCOOLPROJECTS");
           let currentIndex = 0;
       
           function updateImage() {
@@ -58,10 +65,10 @@
           updateImage();
         });
       </script>
-      
-      
-
     </div>
+  <footer>
+    <p>&copy; 2025 NotThatCrazy Interactive.</p>
+  </footer>
 
   </main>
 
