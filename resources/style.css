@@ -245,8 +245,8 @@ main {
   position: absolute;
   border-radius: 50%;
   line-height: 90%;
-  top: -93px;
-  left: -73.5px;
+  top: -32%;
+  left: -25.5%;
 }
 
 .packedCircle:hover .thumbnail {
