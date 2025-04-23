@@ -238,6 +238,16 @@ main {
   top: -20px;
 }
 
+.packedCircle .photoLogo {
+  width: 150%;
+  height: 150%;
+
+  position: absolute;
+  border-radius: 50%;
+  line-height: 90%;
+  top: -31.8%;
+  left: -25.2%;
+}
 .packedCircle .photo {
   width: 150%;
   height: 150%;
@@ -245,8 +255,8 @@ main {
   position: absolute;
   border-radius: 50%;
   line-height: 90%;
-  top: -32%;
-  left: -25.5%;
+  top: -31.8%;
+  left: -25.2%;
 }
 
 .packedCircle:hover .thumbnail {
@@ -254,6 +264,10 @@ main {
 }
 
 .packedCircle:hover .thumbnailPhotoVideo {
+  filter: blur(5px) brightness(0.4);
+}
+
+.packedCircle:hover .photoLogo {
   filter: blur(5px) brightness(0.4);
 }
 
