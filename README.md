@@ -4,7 +4,7 @@ Welcome! This is my personal website.
 
 ## About
 
-This website was created to showcase my projects, skills, and interests. It serves as a central hub for everything I’m working on or passionate about.
+This website was created to showcase my projects, skills, and interests. It serves as a hub for everything I’m working on or passionate about.
 
 ## Features
 
@@ -18,4 +18,4 @@ To view the website, go to https://notcrazy.xyz in your browser.
 
 ## License
 
-This project is open source, feel free to use
+This project is open source; feel free to use it.
