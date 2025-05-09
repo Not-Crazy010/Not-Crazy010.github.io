@@ -18,4 +18,4 @@ To view the website, go to https://notcrazy.xyz in your browser.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source feel free to use
