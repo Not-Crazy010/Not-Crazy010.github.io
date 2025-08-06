@@ -1,3 +1,24 @@
+/* === Color Variables === */
+:root {
+  --color-bg-main: #1b4965;/* Main backround color */
+  
+  --color-bg-nav: #62b6cb;/* Navigation background color */
+
+  --color-bg-viewer: #ff0000;/* idk what is this for #171412*/
+  --color-bg-circle: #bee9e828;/* this is for the backrounds in the circles and its what is what you see if you have a photo or video that is clear */
+  
+  --color-text-main: #ffffff;/* main color for the text */
+
+  --color-text-link: #ffffff;/* color of a link when not hovered */
+  --color-text-link-hover: #62b6cb;/* color of a link when hovered */
+
+  --color-text-nav: #2a2622;/* the main text color on the nav for not is only used for the version */
+  --color-text-nav-link: #ffffff;/* color of a link when not hovered */
+  --color-text-nav-link-hover: #ffffff;/* color of a link when hovered */
+
+  --color-shadow: #0000006e;/* for the shadow of the circles */
+  --color-shadow-hover: #62b6cb;/* the color of the shadow when hovered over */
+}
 @font-face {
   font-family: title;
   src: url('/resources/SpaceMono-Regular.ttf');
@@ -43,13 +64,13 @@ h3 {
 }
 
 body {
-  color: #FFFFFF;
+  color: var(--color-text-main);
   padding: 65px 25px 25px 25px;
   margin: 0;
   line-height: 2em;
-  background-color: #A1BE95;
+  background-color: var(--color-bg-main);
   /*  background-image:url('/resources/paper.png'); */
-  /* 	background-attachment: fixed; */
+  /*  background-attachment: fixed; */
   overflow-x: hidden;
 }
 
@@ -78,12 +99,14 @@ iframe {
   border: none;
 }
 
+
 a {
-  color: #3e3c3c;
+  color: var(--color-text-link);
 }
 
+
 a:hover {
-  color: #F98866;
+  color: var(--color-text-link-hover);
 }
 
 a img {
@@ -100,13 +123,12 @@ a img {
   padding: 5px 25px 10px 25px;
   top: 0;
   position: fixed;
-  color: #ffffff;
-  background-color: #F98866;
+  color: var(--color-text-nav-link-hover);
+  background-color: var(--color-bg-nav);
   font-size: 25px;
   font-family: title;
   z-index: 99 !important;
   border-radius: 0 0 50px 0;
-  color: #ffffff;
   text-decoration: none;
 }
 
@@ -120,7 +142,7 @@ a img {
 }
 
 .viewerOptions {
-  background-color: #171412;
+  background-color: var(--color-bg-viewer);
   padding: 10px 20px 10px 30px;
   position: absolute;
   right: 0px;
@@ -142,12 +164,12 @@ nav {
 
   width: 150px;
 
-  color: #2a2622;
+  color: var(--color-text-nav);
 
   overflow-y: auto;
   overflow-x: hidden;
 
-  background-color: #F98866;
+  background-color: var(--color-bg-nav);
   border-radius: 100px 100px 10px 10px;
 }
 
@@ -155,17 +177,17 @@ nav {
 nav,
 #navmobile,
 .packedCircle {
-  box-shadow: 0px 10px 20px #00000050;
+  box-shadow: 0px 10px 20px var(--color-shadow);
 }
 
 
 nav a {
-  color: #000000;
+  color: var(--color-text-nav-link);
   text-decoration: none;
 }
 
 nav a:hover {
-  color: #ffffff; /* Change this to a color that contrasts with the background */
+  color: var(--color-text-nav-link-hover); /* Change this to a color that contrasts with the background */
 }
 
 nav ul {
@@ -212,14 +234,14 @@ main {
   margin: 1%;
   margin-top: -4%;
 
-  background-color: #00000050;
+  background-color: var(--color-bg-circle);
 }
 
 .packedCircle:hover {
-  box-shadow: 0px 0px 50px #F98866;
+  box-shadow: 0px 0px 50px var(--color-shadow-hover);
 }
 
-.packedCircle .thumbnail {
+.packedCircle .thumbnail {/* video */
   width: 100%;
   height: 100%;
 
@@ -228,7 +250,7 @@ main {
   line-height: 90%;
 }
 
-.packedCircle .thumbnailPhotoVideo {
+.packedCircle .thumbnailPhotoVideo {/* video of photos */
   width: 100%;
   height: 100%;
 
@@ -238,17 +260,18 @@ main {
   top: -20px;
 }
 
-.packedCircle .photoLogo {
-  width: 150%;
-  height: 150%;
+.packedCircle .photoLogo {/* photo for soxbox logo as its made badly lol */
+  width: 140%;
+  height: 140%;
 
   position: absolute;
   border-radius: 50%;
   line-height: 90%;
-  top: -31.8%;
-  left: -25.2%;
+  top: 43.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.packedCircle .photo {
+.packedCircle .photo {/* photo */
   width: 150%;
   height: 150%;
 
