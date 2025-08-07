@@ -50,4 +50,4 @@ function updateFavicon(url) {
 setInterval(() => {
   updateFavicon(faviconFrames[currentFrame]);
   currentFrame = (currentFrame + 1) % faviconFrames.length;
-}, 200);
+}, 110);
