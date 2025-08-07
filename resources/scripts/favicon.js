@@ -1,0 +1,53 @@
+const faviconFrames = [
+  'resources/favicons/1.svg',
+  'resources/favicons/2.svg',
+  'resources/favicons/3.svg',
+  'resources/favicons/4.svg',
+  'resources/favicons/5.svg',
+  'resources/favicons/6.svg',
+  'resources/favicons/7.svg',
+  'resources/favicons/8.svg',
+  'resources/favicons/9.svg',
+  'resources/favicons/10.svg',
+  'resources/favicons/11.svg',
+  'resources/favicons/12.svg',
+  'resources/favicons/13.svg',
+  'resources/favicons/14.svg',
+  'resources/favicons/15.svg',
+  'resources/favicons/16.svg',
+  'resources/favicons/17.svg',
+  'resources/favicons/18.svg',
+  'resources/favicons/19.svg',
+  'resources/favicons/20.svg',
+  'resources/favicons/21.svg',
+  'resources/favicons/22.svg',
+  'resources/favicons/23.svg',
+  'resources/favicons/24.svg',
+  'resources/favicons/25.svg',
+  'resources/favicons/26.svg',
+  'resources/favicons/27.svg',
+  'resources/favicons/28.svg',
+  'resources/favicons/29.svg',
+  'resources/favicons/30.svg',
+  'resources/favicons/31.svg',
+  'resources/favicons/32.svg'
+];
+
+let currentFrame = 0;
+
+function updateFavicon(url) {
+  const oldLinks = document.querySelectorAll("link[rel='icon'], link[rel='shortcut icon']");
+  oldLinks.forEach(link => link.remove());
+
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/svg+xml';
+  link.href = url;
+  document.head.appendChild(link);
+}
+
+// Start favicon animation
+setInterval(() => {
+  updateFavicon(faviconFrames[currentFrame]);
+  currentFrame = (currentFrame + 1) % faviconFrames.length;
+}, 200);
