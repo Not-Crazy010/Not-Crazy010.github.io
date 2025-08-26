@@ -35,27 +35,65 @@
 
         <div class="thumbtext">NotThatCrazy Interactive</div>
       </a>
+
+
       <script>
         document.addEventListener("DOMContentLoaded", () => {
-          const imageFolder = "/resources/Photos/CoolProjects";
-          const images = [
-            `${imageFolder}/3DCrane.png`,
-            `${imageFolder}/3DExcavator.png`,
-            `${imageFolder}/3DFork.jpg`,
-            `${imageFolder}/3DSkid.png`,
+          // Define media items (images and videos)
+          const mediaFolder = "/resources/Photos/CoolProjects";
+          const mediaItems = [
+            { type: "image", src: `${mediaFolder}/3DCrane.png` },
+            { type: "image", src: `${mediaFolder}/3DExcavator.png` },
+            { type: "image", src: `${mediaFolder}/3DFork.jpg` },
+            { type: "image", src: `${mediaFolder}/3DSkid.png` },
           ];
+
+          // Preload media
+          const preloadedMedia = mediaItems.map(item => {
+            if (item.type === "image") {
+              const img = new Image();
+              img.src = item.src;
+              return { type: "image", element: img };
+            } else if (item.type === "video") {
+              const video = document.createElement("video");
+              video.src = item.src;
+              video.preload = "auto";
+              video.muted = true;
+              video.loop = true;
+              video.autoplay = true;
+              return { type: "video", element: video };
+            }
+            return null;
+          });
+
           const dynamicImage = document.getElementById("dynamicImagePhotoForCOOLPROJECTS");
           let currentIndex = 0;
-      
-          function updateImage() {
-            dynamicImage.src = images[currentIndex];
-            currentIndex = (currentIndex + 1) % images.length;
-          }
-          setInterval(updateImage, 2000);
-          updateImage();
-        });
 
-        
+          function updateMedia() {
+            const media = preloadedMedia[currentIndex];
+            if (!media) return;
+            if (media.type === "image") {
+              dynamicImage.src = media.element.src;
+              dynamicImage.style.display = "block";
+              if (dynamicImage.nextElementSibling && dynamicImage.nextElementSibling.tagName === "VIDEO") {
+                dynamicImage.nextElementSibling.style.display = "none";
+              }
+            } else if (media.type === "video") {
+              // If video element doesn't exist, insert it
+              let videoEl = dynamicImage.nextElementSibling;
+              if (!videoEl || videoEl.tagName !== "VIDEO") {
+                videoEl = media.element.cloneNode(true);
+                dynamicImage.parentNode.appendChild(videoEl);
+              }
+              videoEl.src = media.element.src;
+              videoEl.style.display = "block";
+              dynamicImage.style.display = "none";
+            }
+            currentIndex = (currentIndex + 1) % preloadedMedia.length;
+          }
+          setInterval(updateMedia, 2000);
+          updateMedia();
+        });
       </script>
 
       
