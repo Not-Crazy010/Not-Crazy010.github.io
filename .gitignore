@@ -410,6 +410,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Live-server
-package.json
 package-lock.json
