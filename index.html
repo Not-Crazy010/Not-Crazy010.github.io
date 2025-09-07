@@ -1,106 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Not_Crazy.md</title>
-  <link rel="stylesheet" href="/resources/style.css">
-  <meta name="viewport" content="width=device-width, height=device-height">
-  <script src="resources\scripts\favicon.js" defer></script>
-
-</head>
-
-<body>
-  <div id="backgroundGlyph"></div>
-  <a href="/mobilenav.html" id="navmobile"> Menu </a>
-  <iframe id="navframe" src="/resources/nav.html"></iframe>
-  <main>
-    
-    <div class="circlesPacked">
-      <a class="packedCircle" href="/SoxBox.html">
-        <video class="thumbnail" autoplay muted playsinline loop src="resources/SoxBox/soxboxPH.mp4"></video>
-
-        <div class="thumbtext">SoxBox</div>
-      </a>
-
-      <a class="packedCircle" href="/Cool-Projects.html">
-        <div class="thumbnailPhotoVideo">
-          <img id="dynamicImagePhotoForCOOLPROJECTS" src="" alt="Cool Projects" />
-        </div>
-        <div class="thumbtext">Cool Projects</div>
-      </a>
-
-      <a class="packedCircle" href="/notthatcrazyinteractive.html">
-        <img class="photoLogo" src="resources\icons\BlackSoxBoxLogo.png"></img>
-
-        <div class="thumbtext">NotThatCrazy Interactive</div>
-      </a>
-
-
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          // Define media items (images and videos)
-          const mediaFolder = "/resources/Photos/CoolProjects";
-          const mediaItems = [
-            { type: "image", src: `${mediaFolder}/3DCrane.png` },
-            { type: "image", src: `${mediaFolder}/3DExcavator.png` },
-            { type: "image", src: `${mediaFolder}/3DFork.jpg` },
-            { type: "image", src: `${mediaFolder}/3DSkid.png` },
-          ];
-
-          // Preload media
-          const preloadedMedia = mediaItems.map(item => {
-            if (item.type === "image") {
-              const img = new Image();
-              img.src = item.src;
-              return { type: "image", element: img };
-            } else if (item.type === "video") {
-              const video = document.createElement("video");
-              video.src = item.src;
-              video.preload = "auto";
-              video.muted = true;
-              video.loop = true;
-              video.autoplay = true;
-              return { type: "video", element: video };
-            }
-            return null;
-          });
-
-          const dynamicImage = document.getElementById("dynamicImagePhotoForCOOLPROJECTS");
-          let currentIndex = 0;
-
-          function updateMedia() {
-            const media = preloadedMedia[currentIndex];
-            if (!media) return;
-            if (media.type === "image") {
-              dynamicImage.src = media.element.src;
-              dynamicImage.style.display = "block";
-              if (dynamicImage.nextElementSibling && dynamicImage.nextElementSibling.tagName === "VIDEO") {
-                dynamicImage.nextElementSibling.style.display = "none";
-              }
-            } else if (media.type === "video") {
-              // If video element doesn't exist, insert it
-              let videoEl = dynamicImage.nextElementSibling;
-              if (!videoEl || videoEl.tagName !== "VIDEO") {
-                videoEl = media.element.cloneNode(true);
-                dynamicImage.parentNode.appendChild(videoEl);
-              }
-              videoEl.src = media.element.src;
-              videoEl.style.display = "block";
-              dynamicImage.style.display = "none";
-            }
-            currentIndex = (currentIndex + 1) % preloadedMedia.length;
-          }
-          setInterval(updateMedia, 2000);
-          updateMedia();
-        });
-      </script>
-
-      
-    </div>
-  <footer>
-    <p>&copy; 2025 NotThatCrazy-Interactive.</p>
-  </footer>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
